@@ -1,0 +1,24 @@
+.diceSelection-container-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -0.1em;
+  margin-top: 0.25em;
+}
+
+.select-dice-type {
+  width: 100%;
+}
+
+.formControl {
+  width: 100%;
+}
+
+.multi-switch {
+  margin-top: 10px;
+}
+
+.dice-number {
+  margin-top: 1em;
+  width: 100%;
+}
