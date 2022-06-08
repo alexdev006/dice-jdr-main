@@ -29,7 +29,7 @@ const Dice = () => {
     setDiceNumber(1);
   };
 
-  //todo history roll ()
+  //todo history roll
   return (
     <>
       <span className="roll-title">
