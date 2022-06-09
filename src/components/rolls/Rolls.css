@@ -41,6 +41,18 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.center-box-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.center-box-fatButton {
+  width: 20em;
+  margin-top: 2em;
 }
 
 .right-box {

@@ -1,12 +1,10 @@
-import './App.css';
-import Rolls from './components/rolls/Rolls';
-import Test22 from './components/Test22';
+import "./App.css";
+import Rolls from "./components/rolls/Rolls";
 
 function App() {
   return (
     <div className="App">
       <Rolls />
-      <Test22 />
     </div>
   );
 }

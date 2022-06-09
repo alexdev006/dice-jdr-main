@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Button, Badge, Fade } from '@mui/material';
+import { Button, Badge, Fade } from "@mui/material";
 
-import { GiRollingDices } from 'react-icons/gi';
+import { GiRollingDices } from "react-icons/gi";
 
-import './DiceCard.css';
+import "./DiceCard.css";
 
 export default function DiceCard({ diceType }) {
-  const [diceResult, setDiceResult] = useState('-');
+  const [diceResult, setDiceResult] = useState("-");
 
   const getRandomRoll = (diceType) => {
     setDiceResult(Math.floor(Math.random() * diceType) + 1);
   };
 
   return (
-    <Fade in={true} timeout={{ enter: 800, exit: 400 }}>
+    <Fade in={true} timeout={{ enter: 1500, exit: 400 }}>
       <span className="card-container">
         <span className="card-content">
           <Badge badgeContent={diceType} color="primary" max={100}>
@@ -25,7 +25,7 @@ export default function DiceCard({ diceType }) {
         <span className="card-action">
           <Button
             size="small"
-            variant="outlined"
+            variant="contained"
             color="primary"
             onClick={() => getRandomRoll(diceType)}
           >

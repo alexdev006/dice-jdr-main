@@ -7,7 +7,6 @@ import {
   TextField,
   Switch,
   FormControlLabel,
-  Fade,
 } from "@mui/material";
 
 import "./DiceSelection.css";
@@ -23,9 +22,7 @@ const DiceSelection = ({
 }) => {
   return (
     <div className="diceSelection-container">
-      <Fade in timeout={{ enter: 1100, exit: 200 }}>
-        <p className="diceSelection-container-title">Dice selection</p>
-      </Fade>
+      <p className="diceSelection-container-title">Dice selection</p>
       <FormControl className="formControl">
         <InputLabel id="dice-select-label">Select a dice type</InputLabel>
         <div>
@@ -60,18 +57,16 @@ const DiceSelection = ({
         </div>
         <div className="dice-number">
           {isMultidice && (
-            <Fade in={true} timeout={{ enter: 500, exit: 400 }}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                onChange={handleChangeDiceNumber}
-                id="outlined-number"
-                label="Number of dice(s)"
-                type="number"
-                value={diceNumber}
-                InputProps={{ inputProps: { min: 1, max: 20 } }}
-              />
-            </Fade>
+            <TextField
+              fullWidth
+              variant="outlined"
+              onChange={handleChangeDiceNumber}
+              id="outlined-number"
+              label="Number of dice(s)"
+              type="number"
+              value={diceNumber}
+              InputProps={{ inputProps: { min: 1, max: 20 } }}
+            />
           )}
         </div>
       </FormControl>

@@ -1,9 +1,10 @@
 .diceSelection-container-title {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   letter-spacing: -0.1em;
   margin-top: 0.25em;
+  margin-bottom: 0.5em;
 }
 
 .select-dice-type {
@@ -16,6 +17,7 @@
 
 .multi-switch {
   margin-top: 10px;
+  margin-left: 0.5em;
 }
 
 .dice-number {
