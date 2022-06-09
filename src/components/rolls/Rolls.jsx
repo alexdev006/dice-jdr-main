@@ -1,22 +1,36 @@
-import React, { useState } from "react";
-import DiceCard from "../diceCard/DiceCard";
-import RollHistory from "../rollHistory/RollHistory";
-import DiceSelection from "../diceSelection/DiceSelection";
-import { Fade } from "@mui/material";
+import React, { useState } from 'react';
+import DiceCard from '../diceCard/DiceCard';
+import RollHistory from '../rollHistory/RollHistory';
+import DiceSelection from '../diceSelection/DiceSelection';
+import { Fade } from '@mui/material';
 
-import "./Rolls.css";
+import './Rolls.css';
 
 const Dice = () => {
   const diceTypeArray = [4, 6, 8, 10, 12, 20, 100];
   const diceNumberArray = [];
-  const [diceType, setDiceType] = useState("");
-  const [diceResult, setDiceResult] = useState("");
-  const [diceNumber, setDiceNumber] = useState("1");
+  const [diceType, setDiceType] = useState('');
+  const [diceNumber, setDiceNumber] = useState('1');
   const [isMultidice, setIsMultidice] = useState(false);
 
+  // const [dice, setDice] = useState({
+  //   diceFace: '',
+  //   diceRollresult: '',
+  // });
+
+  // const handleDiceRoll = (event) => {
+  //   //const { name, value } = e.target;
+
+  //   const value = event.target.value;
+  //   setDice({ ...dice });
+  // };
+
   const handleChangeDiceType = (event) => {
+    // const value = event.taget.value
+    // setDiceType({...diceType,
+    // []});
     setDiceType(event.target.value);
-    setDiceResult("-");
+    //setDiceResult('-');
   };
 
   const handleChangeDiceNumber = (e) => {
@@ -51,12 +65,8 @@ const Dice = () => {
         </div>
         <div className="center-box">
           {diceType &&
-            Array.from({ length: diceNumber }, () => (
-              <DiceCard
-                setDiceResult={setDiceResult}
-                diceType={diceType}
-                diceResult={diceResult}
-              />
+            Array.from({ length: diceNumber }).map((_, idx) => (
+              <DiceCard key={idx} name={idx} diceType={diceType} />
             ))}
         </div>
         <div className="right-box">
