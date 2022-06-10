@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   InputLabel,
   MenuItem,
@@ -7,9 +7,9 @@ import {
   TextField,
   Switch,
   FormControlLabel,
-} from "@mui/material";
+} from '@mui/material';
 
-import "./DiceSelection.css";
+import './DiceSelection.css';
 
 const DiceSelection = ({
   diceType,
@@ -20,6 +20,7 @@ const DiceSelection = ({
   handleIsMultidiceSwitch,
   diceNumber,
 }) => {
+  //const classes = useStyles();
   return (
     <div className="diceSelection-container">
       <p className="diceSelection-container-title">Dice selection</p>
@@ -27,7 +28,14 @@ const DiceSelection = ({
         <InputLabel id="dice-select-label">Select a dice type</InputLabel>
         <div>
           <Select
-            className="select-dice-type"
+            // sx={{
+            //   backgroundColor: '#CD8F73',
+            //   width: '100%',
+            //   opacity: '1',
+            //   '& .MuiSelect-select': { border: 'yellow' },
+            // }}
+            outlined
+            className="Select"
             variant="outlined"
             labelId="dice-select-label"
             id="select-dice"
@@ -48,7 +56,7 @@ const DiceSelection = ({
               <Switch
                 checked={isMultidice}
                 onChange={handleIsMultidiceSwitch}
-                inputProps={{ "aria-label": "controlled" }}
+                inputProps={{ 'aria-label': 'controlled' }}
                 size="small"
               />
             }

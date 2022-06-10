@@ -9,6 +9,16 @@
 
 .select-dice-type {
   width: 100%;
+  color: aqua;
+}
+
+.Select {
+  background-color: aquamarine;
+  width: 100%;
+}
+
+.Select.MuiSelect-outlined {
+  border: red 1px solid;
 }
 
 .formControl {
