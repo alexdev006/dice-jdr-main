@@ -1,13 +1,13 @@
-import './App.css';
-import Rolls from './components/rolls/Rolls';
+import "./App.css";
 
-import { StateContext } from './components/Context/StateContext';
+import { StateContext } from "./components/Context/StateContext";
+import DiceRoll from "./components/Diceroll/DiceRoll";
 
 function App() {
   return (
     <StateContext>
       <div className="App">
-        <Rolls />
+        <DiceRoll />
       </div>
     </StateContext>
   );

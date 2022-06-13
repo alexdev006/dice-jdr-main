@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useStateContext } from "../Context/StateContext";
+
 import {
   InputLabel,
   MenuItem,
@@ -7,20 +9,27 @@ import {
   TextField,
   Switch,
   FormControlLabel,
-} from '@mui/material';
+} from "@mui/material";
 
-import './DiceSelection.css';
+import "./DiceSelection.css";
 
-const DiceSelection = ({
-  diceType,
-  handleChangeDiceNumber,
-  handleChangeDiceType,
-  diceTypeArray,
-  isMultidice,
-  handleIsMultidiceSwitch,
-  diceNumber,
-}) => {
-  //const classes = useStyles();
+const DiceSelection = () => {
+  const {
+    diceType,
+    handleChangeDiceNumber,
+    handleChangeDiceType,
+    diceNumber,
+    setDiceNumber,
+  } = useStateContext();
+
+  const diceTypeArray = [4, 6, 8, 10, 12, 20, 100];
+  const [isMultidice, setIsMultidice] = useState(false);
+
+  const handleIsMultidiceSwitch = () => {
+    setIsMultidice((prev) => !prev);
+    setDiceNumber(1);
+  };
+
   return (
     <div className="diceSelection-container">
       <p className="diceSelection-container-title">Dice selection</p>
@@ -28,14 +37,14 @@ const DiceSelection = ({
         <InputLabel id="dice-select-label">Select a dice type</InputLabel>
         <div>
           <Select
-            // sx={{
-            //   backgroundColor: '#CD8F73',
-            //   width: '100%',
-            //   opacity: '1',
-            //   '& .MuiSelect-select': { border: 'yellow' },
-            // }}
-            outlined
-            className="Select"
+            sx={{
+              backgroundColor: "#1f3358",
+              color: "yellow",
+              width: "100%",
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "yellow",
+              },
+            }}
             variant="outlined"
             labelId="dice-select-label"
             id="select-dice"
@@ -56,7 +65,7 @@ const DiceSelection = ({
               <Switch
                 checked={isMultidice}
                 onChange={handleIsMultidiceSwitch}
-                inputProps={{ 'aria-label': 'controlled' }}
+                inputProps={{ "aria-label": "controlled" }}
                 size="small"
               />
             }
@@ -66,11 +75,22 @@ const DiceSelection = ({
         <div className="dice-number">
           {isMultidice && (
             <TextField
-              fullWidth
+              sx={{
+                width: "100%",
+                borderRadius: "5px",
+                backgroundColor: "#1f3358",
+                color: "yellow",
+                "&.Mui-focused": {
+                  borderColor: "yellow",
+                },
+              }}
               variant="outlined"
               onChange={handleChangeDiceNumber}
               id="outlined-number"
               label="Number of dice(s)"
+              InputLabelProps={{
+                style: { color: "yellow" },
+              }}
               type="number"
               value={diceNumber}
               InputProps={{ inputProps: { min: 1, max: 20 } }}

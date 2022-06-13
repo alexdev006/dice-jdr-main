@@ -1,14 +1,26 @@
-import React, { useContext, createContext, useState, useEffect } from 'react';
+import React, { useContext, createContext, useState } from "react";
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [diceResult, setDiceResult] = useState('-');
+  const [diceType, setDiceType] = useState("");
+  const [diceNumber, setDiceNumber] = useState(1);
+
+  const handleChangeDiceNumber = (e) => {
+    setDiceNumber((v) => (e.target.validity.valid ? e.target.value : v));
+  };
+
+  const handleChangeDiceType = (event) => {
+    setDiceType(parseFloat(event.target.value) > 1 ? event.target.value : 1);
+  };
+
   return (
     <Context.Provider
       value={{
-        diceResult,
-        setDiceResult,
+        diceType,
+        diceNumber,
+        handleChangeDiceNumber,
+        handleChangeDiceType,
       }}
     >
       {children}
