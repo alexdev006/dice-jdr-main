@@ -1,11 +1,15 @@
-import "./App.css";
-import Rolls from "./components/rolls/Rolls";
+import './App.css';
+import Rolls from './components/rolls/Rolls';
+
+import { StateContext } from './components/Context/StateContext';
 
 function App() {
   return (
-    <div className="App">
-      <Rolls />
-    </div>
+    <StateContext>
+      <div className="App">
+        <Rolls />
+      </div>
+    </StateContext>
   );
 }
 

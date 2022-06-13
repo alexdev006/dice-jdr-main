@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import DiceCard from "../diceCard/DiceCard";
-import RollHistory from "../rollHistory/RollHistory";
-import DiceSelection from "../diceSelection/DiceSelection";
-import { Button, Fade } from "@mui/material";
+import React, { useState } from 'react';
+import DiceCard from '../diceCard/DiceCard';
+import RollHistory from '../rollHistory/RollHistory';
+import DiceSelection from '../diceSelection/DiceSelection';
+import { Button, Fade } from '@mui/material';
 
-import "./Rolls.css";
+import './Rolls.css';
 
 const Dice = () => {
   const diceTypeArray = [4, 6, 8, 10, 12, 20, 100];
   const diceNumberArray = [];
-  const [diceType, setDiceType] = useState("");
-  const [diceNumber, setDiceNumber] = useState("1");
+  const [diceType, setDiceType] = useState('');
+  const [diceNumber, setDiceNumber] = useState('1');
   const [isMultidice, setIsMultidice] = useState(false);
 
   const handleChangeDiceType = (event) => {
@@ -58,13 +58,13 @@ const Dice = () => {
                   <DiceCard key={idx} name={idx} diceType={diceType} />
                 ))}
             </div>
-            <div className="center-box-fatButton">
+            {/* <div className="center-box-fatButton">
               {diceNumber > 1 && (
                 <Button size="large" variant="contained" fullWidth>
                   Roll all dices
                 </Button>
               )}
-            </div>
+            </div> */}
           </div>
         </Fade>
         <Fade in timeout={{ enter: 2000, exit: 400 }}>
