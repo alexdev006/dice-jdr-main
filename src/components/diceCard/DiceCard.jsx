@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button, Badge, Fade } from '@mui/material';
-
 import { GiRollingDices } from 'react-icons/gi';
 
 import './DiceCard.css';
@@ -18,25 +16,21 @@ export default function DiceCard({ diceType }) {
   }, [diceType]);
 
   return (
-    <Fade in={true} timeout={{ enter: 1500, exit: 400 }}>
-      <span className="card-container">
-        <span className="card-content">
-          <Badge badgeContent={diceType} color="primary" max={100}>
-            <GiRollingDices size="2em" />
-          </Badge>
-          <p>{diceResult}</p>
+    <span className="card-container">
+      <span className="card-content">
+        <span class="inline-flex items-center m-2 px-2 py-1 bg-accent rounded-full text-sm font-semibold text-stone-50">
+          <GiRollingDices size="2em" /> <span class="ml-1">{diceType}</span>
         </span>
-        <span className="card-action">
-          <Button
-            size="small"
-            variant="contained"
-            color="primary"
-            onClick={() => getRandomRoll(diceType)}
-          >
-            Roll
-          </Button>
-        </span>
+        <p>{diceResult}</p>
       </span>
-    </Fade>
+      <span className="card-action">
+        <button
+          class="btn btn-sm btn-outline btn-accent"
+          onClick={() => getRandomRoll(diceType)}
+        >
+          Roll
+        </button>
+      </span>
+    </span>
   );
 }

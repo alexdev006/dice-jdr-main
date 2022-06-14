@@ -19,7 +19,7 @@
 }
 
 .left-box {
-  min-height: 22em;
+  min-height: 25em;
   box-sizing: border-box;
   width: 20%;
   border-radius: 5px;
@@ -29,7 +29,7 @@
 }
 
 .center-box {
-  min-height: 22em;
+  min-height: 25em;
   box-sizing: border-box;
   margin: 0.5em;
   padding: 0.5em;
@@ -50,13 +50,8 @@
   justify-content: center;
 }
 
-.center-box-fatButton {
-  width: 20em;
-  margin-top: 2em;
-}
-
 .right-box {
-  min-height: 22em;
+  min-height: 25em;
   box-sizing: border-box;
   margin: 0.5em;
   padding: 0.5em;

@@ -1,7 +1,5 @@
-import "./App.css";
-
-import { StateContext } from "./components/Context/StateContext";
-import DiceRoll from "./components/Diceroll/DiceRoll";
+import { StateContext } from './components/Context/StateContext';
+import DiceRoll from './components/diceroll/DiceRoll';
 
 function App() {
   return (

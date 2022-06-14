@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import { useStateContext } from '../Context/StateContext';
 
-import {
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
-  TextField,
-  Switch,
-  FormControlLabel,
-} from '@mui/material';
-
 import './DiceSelection.css';
 
 const DiceSelection = () => {
@@ -33,52 +23,48 @@ const DiceSelection = () => {
   return (
     <div className="diceSelection-container">
       <p className="diceSelection-container-title">Dice selection</p>
-      <FormControl className="formControl">
-        <InputLabel id="dice-select-label">Select a dice type</InputLabel>
-        <div>
-          <Select
-            className="select-dice"
-            variant="outlined"
-            labelId="dice-select-label"
-            id="select-dice"
-            value={diceType}
-            label="Select a dice type"
-            onChange={handleChangeDiceType}
-          >
-            {diceTypeArray.map((dice, idx) => (
-              <MenuItem key={idx} value={dice}>
-                {dice}
-              </MenuItem>
-            ))}
-          </Select>
-        </div>
-        <div className="multi-switch">
-          <FormControlLabel
-            control={
-              <Switch
-                checked={isMultidice}
-                onChange={handleIsMultidiceSwitch}
-                size="small"
-              />
-            }
-            label="Multi dices"
+      <div>
+        <label class="label">
+          <span class="label-text">Dice type :</span>
+        </label>
+        <select
+          class="select select-accent w-full max-w-xs"
+          onChange={handleChangeDiceType}
+          value={diceType}
+        >
+          <option selected>Select a dice type</option>
+          {diceTypeArray.map((dice, idx) => (
+            <option key={idx}>{dice}</option>
+          ))}
+        </select>
+      </div>
+      <div class="form-control">
+        <label class="label cursor-pointer">
+          <span class="label-text">More dice ?</span>
+          <input
+            type="checkbox"
+            class="toggle toggle-sm toggle-accent"
+            checked={isMultidice}
+            onChange={handleIsMultidiceSwitch}
           />
-        </div>
-        <div className="dice-number">
-          {isMultidice && (
-            <TextField
-              className="dice-number-input"
-              variant="outlined"
-              onChange={handleChangeDiceNumber}
-              id="outlined-number"
-              label="Number of dice(s)"
-              type="number"
-              value={diceNumber}
-              InputProps={{ inputProps: { min: 1, max: 20 } }}
-            />
-          )}
-        </div>
-      </FormControl>
+        </label>
+      </div>
+      {isMultidice && (
+        <>
+          <label class="label">
+            <span class="label-text">Dice type (max 15):</span>
+          </label>
+          <input
+            onChange={handleChangeDiceNumber}
+            min="1"
+            max="15"
+            value={diceNumber}
+            type="number"
+            placeholder="Number of dice"
+            class="input input-bordered input-accent w-full max-w-xs"
+          />
+        </>
+      )}
     </div>
   );
 };

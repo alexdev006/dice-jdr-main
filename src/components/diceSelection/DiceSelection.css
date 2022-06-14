@@ -7,23 +7,6 @@
   margin-bottom: 0.5em;
 }
 
-.formControl {
-  width: 100%;
-}
-
-.select-dice {
-  width: 100%;
-}
-
-.multi-switch {
-  margin-top: 10px;
-  margin-left: 0.5em;
-}
-
 .dice-number {
   margin-top: 1em;
-}
-
-.dice-number-input {
-  width: 100%;
 }

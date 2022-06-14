@@ -1,17 +1,13 @@
 .card-container {
-  width: 7.5em;
+  width: 7em;
   border: solid 1px lightblue;
-  background-color: aliceblue;
   border-radius: 5px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   margin: 0.5em;
-  padding-top: 1em;
-  background-color: rgb(56, 44, 67);
   color: antiquewhite;
-  height: 100%;
 }
 
 .card-content {
@@ -21,7 +17,6 @@
 }
 
 .card-content p {
-  margin: 0.2em;
   font-size: 3em;
   font-weight: bold;
 }
