@@ -1,17 +1,18 @@
-import React from "react";
-import { useStateContext } from "../Context/StateContext";
+import React from 'react';
+import { useStateContext } from '../Context/StateContext';
 
-import DiceCard from "../diceCard/DiceCard";
-import RollHistory from "../rollHistory/RollHistory";
-import DiceSelection from "../diceSelection/DiceSelection";
-import { Fade } from "@mui/material";
+import DiceCard from '../diceCard/DiceCard';
+import RollHistory from '../rollHistory/RollHistory';
+import DiceSelection from '../diceSelection/DiceSelection';
+import { Fade } from '@mui/material';
 
-import "./DiceRoll.css";
+import './DiceRoll.css';
 
 const DiceRoll = () => {
   const { diceNumber, diceType } = useStateContext();
 
   //todo history roll
+  //tailwind css implementation
   return (
     <>
       <span className="roll-title">

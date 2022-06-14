@@ -1,9 +1,9 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState } from 'react';
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [diceType, setDiceType] = useState("");
+  const [diceType, setDiceType] = useState('');
   const [diceNumber, setDiceNumber] = useState(1);
 
   const handleChangeDiceNumber = (e) => {

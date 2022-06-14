@@ -7,16 +7,11 @@
   margin-bottom: 0.5em;
 }
 
-.Select {
-  background-color: aquamarine;
+.formControl {
   width: 100%;
 }
 
-.Select.MuiSelect-outlined {
-  border: red 1px solid;
-}
-
-.formControl {
+.select-dice {
   width: 100%;
 }
 
@@ -27,5 +22,8 @@
 
 .dice-number {
   margin-top: 1em;
+}
+
+.dice-number-input {
   width: 100%;
 }

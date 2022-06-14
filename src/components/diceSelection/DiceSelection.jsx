@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useStateContext } from "../Context/StateContext";
+import React, { useState } from 'react';
+import { useStateContext } from '../Context/StateContext';
 
 import {
   InputLabel,
@@ -9,9 +9,9 @@ import {
   TextField,
   Switch,
   FormControlLabel,
-} from "@mui/material";
+} from '@mui/material';
 
-import "./DiceSelection.css";
+import './DiceSelection.css';
 
 const DiceSelection = () => {
   const {
@@ -37,14 +37,7 @@ const DiceSelection = () => {
         <InputLabel id="dice-select-label">Select a dice type</InputLabel>
         <div>
           <Select
-            sx={{
-              backgroundColor: "#1f3358",
-              color: "yellow",
-              width: "100%",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "yellow",
-              },
-            }}
+            className="select-dice"
             variant="outlined"
             labelId="dice-select-label"
             id="select-dice"
@@ -65,7 +58,6 @@ const DiceSelection = () => {
               <Switch
                 checked={isMultidice}
                 onChange={handleIsMultidiceSwitch}
-                inputProps={{ "aria-label": "controlled" }}
                 size="small"
               />
             }
@@ -75,22 +67,11 @@ const DiceSelection = () => {
         <div className="dice-number">
           {isMultidice && (
             <TextField
-              sx={{
-                width: "100%",
-                borderRadius: "5px",
-                backgroundColor: "#1f3358",
-                color: "yellow",
-                "&.Mui-focused": {
-                  borderColor: "yellow",
-                },
-              }}
+              className="dice-number-input"
               variant="outlined"
               onChange={handleChangeDiceNumber}
               id="outlined-number"
               label="Number of dice(s)"
-              InputLabelProps={{
-                style: { color: "yellow" },
-              }}
               type="number"
               value={diceNumber}
               InputProps={{ inputProps: { min: 1, max: 20 } }}
