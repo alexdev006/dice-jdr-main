@@ -11,7 +11,7 @@ const DiceRoll = () => {
   const { diceNumber, diceType } = useStateContext();
 
   //todo history roll
-  //tailwind css implementation
+
   return (
     <>
       <span className="roll-title">
